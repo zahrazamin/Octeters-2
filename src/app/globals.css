@@ -1,26 +1,372 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #161616;
+  color: #ffffff;
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.nav-bottom-line {
+  position: absolute;
+  top: 159px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-boundary-lines {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1495px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-boundary-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-boundary-line--left {
+  left: 0;
+}
+
+.hero-boundary-line--right {
+  right: 0;
+}
+
+.hero-iso-bg {
+  position: absolute;
+  top: -160px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image:
+    radial-gradient(ellipse 110% 130% at 72% -10%, black 0%, black 20%, transparent 62%),
+    linear-gradient(to bottom, transparent 0%, black 22%, black 65%, transparent 95%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(ellipse 110% 130% at 72% -10%, black 0%, black 20%, transparent 62%),
+    linear-gradient(to bottom, transparent 0%, black 22%, black 65%, transparent 95%);
+  mask-composite: intersect;
+}
+
+/* ── Tab bar line ── */
+.hero__tabbar-line-bottom {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  display: block;
+}
+
+/* ── Tab bar container ── */
+.hero__tabbar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 45px;
+  padding-bottom: 0;
+  gap: 0;
+}
+
+/* ── Individual tab ── */
+.c-tab-link {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  cursor: pointer;
+  padding-left: 0;
+  padding-right: 30px;
+  padding-bottom: 0;
+}
+
+.c-tab-link__title {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5634px;
+  margin-bottom: 8px;
+}
+
+.c-tab-link__title span:first-child {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 23.16px;
+  line-height: 25px;
+  font-weight: 500;
+  color: #78736e;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.c-tab-link__subtitle {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 23.16px;
+  line-height: 25px;
+  font-weight: 500;
+  color: rgba(120, 115, 110, 0.7);
+  display: block;
+}
+
+.c-tab-link__divider {
+  width: 207px;
+  height: 3px;
+  background: #6b6662;
+  border-radius: 0;
+  margin-top: 12px;
+  display: block;
+  transition: background 0.2s ease;
+}
+
+/* Active state */
+.c-tab-link--active .c-tab-link__title span:first-child {
+  color: #ffffff;
+}
+
+.c-tab-link--active .c-tab-link__divider {
+  background: #ffffff;
+}
+
+/* Hover state */
+.c-tab-link:hover .c-tab-link__title span:first-child {
+  color: #ffffff;
+}
+
+.c-tab-link:hover .c-tab-link__divider {
+  background: #a39e99;
+}
+
+/* ══════════════════════════════════════════
+   ERP SECTION
+══════════════════════════════════════════ */
+
+.erp-section {
+  background-color: #E6E3E0;
+  width: 100%;
+}
+
+.erp-container {
+  max-width: 1495px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.erp {
+  width: 100%;
+}
+
+/* Headline */
+.erp__heading {
+  padding: 231px 51px 40px 51px;
+  border: none;
+}
+
+.erp__title {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 63.05px;
+  line-height: 69px;
+  font-weight: 500;
+  color: #000000;
+  letter-spacing: -1px;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Features wrapper */
+.erp__features-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-style: none;
+}
+
+/* Separator lines — gradient fade at edges */
+.erp__features-line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #85807B 5%,
+    #85807B 95%,
+    transparent 100%
+  );
+  border: none;
+  flex-shrink: 0;
+}
+
+.erp__features-line-top,
+.erp__features-line-bottom {
+  display: block;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(133, 128, 123, 0.18) 5%,
+    rgba(133, 128, 123, 0.18) 95%,
+    transparent 100%
+  );
+  border: none;
+  flex-shrink: 0;
+}
+
+/* Feature row — two equal columns */
+.erp__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 386px;
+  padding: 51px;
+  box-sizing: border-box;
+  align-items: start;
+  border-style: none;
+}
+
+.erp__row + .erp__row {
+}
+
+/* Lead — icon + title */
+.erp__lead {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 27px;
+  padding-right: 60px;
+}
+
+.erp__icon {
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.erp__lead-title {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 41.18px;
+  line-height: 46px;
+  font-weight: 500;
+  color: #000000;
+  letter-spacing: 0;
+}
+
+/* Desc — right column */
+.erp__desc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 60px;
+  border-style: none;
+}
+
+.erp__desc-main {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 25.74px;
+  line-height: 33px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.erp__desc-sub {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 23.16px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #78736E;
+}
+
+/* CTA block */
+.erp__cta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 51px;
+  width: 100%;
+}
+
+.erp__cta-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.erp__cta-title {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 63.05px;
+  line-height: 69px;
+  font-weight: 500;
+  color: #000000;
+  letter-spacing: -1px;
+}
+
+.erp__cta-sub {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 23.16px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #78736E;
+  margin-top: 16px;
+}
+
+/* Dark button */
+.c-button--dark {
+  background: #000000;
+  color: #ffffff;
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 18.02px;
+  line-height: 20.59px;
+  font-weight: 500;
+  padding: 15px 30px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

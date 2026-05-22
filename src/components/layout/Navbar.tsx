@@ -5,11 +5,11 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const navLinks = [
-  { label: "Services", hasDropdown: true },
-  { label: "Solutions", hasDropdown: true },
-  { label: "Case Studies", hasDropdown: false },
-  { label: "Company", hasDropdown: false },
-  { label: "Resources", hasDropdown: true },
+  { label: "Services", href: "/services", hasDropdown: false },
+  { label: "Solutions", href: "/solutions", hasDropdown: false },
+  { label: "Case Studies", href: "/case-studies", hasDropdown: false },
+  { label: "Company", href: "/company", hasDropdown: false },
+  { label: "Contact", href: "/contact", hasDropdown: false },
 ];
 
 const BANNER_HEIGHT = 41;
@@ -128,9 +128,9 @@ export default function Navbar() {
           }}
         >
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href="#"
+              href={link.href}
               style={{
                 padding: "15px",
                 borderRadius: "5.15px",
@@ -163,7 +163,7 @@ export default function Navbar() {
               {link.hasDropdown && (
                 <ChevronDown size={14} color="currentColor" strokeWidth={2} />
               )}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -176,33 +176,8 @@ export default function Navbar() {
             flexShrink: 0,
           }}
         >
-          <a
-            href="#"
-            style={{
-              fontSize: "22px",
-              fontWeight: 400,
-              color: "#f9f9f9",
-              padding: "15px",
-              background: "none",
-              border: "none",
-              textDecoration: "none",
-              fontFamily: "var(--font-rethink-sans), 'Rethink Sans', sans-serif",
-              lineHeight: "25.74px",
-              transition: "color 0.15s ease",
-              whiteSpace: "nowrap",
-              flexShrink: 0,
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.color = "#FFFFFF";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.color = "#f9f9f9";
-            }}
-          >
-            Sign in
-          </a>
-
-          <button
+          <Link
+            href="/contact"
             style={{
               width: "162px",
               height: isScrolled ? "44px" : "51px",
@@ -222,20 +197,21 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              textDecoration: "none",
             }}
             onMouseEnter={(e) => {
-              const el = e.currentTarget as HTMLButtonElement;
+              const el = e.currentTarget as HTMLAnchorElement;
               el.style.background = "#D4D0CD";
               el.style.transform = "translateY(-1px)";
             }}
             onMouseLeave={(e) => {
-              const el = e.currentTarget as HTMLButtonElement;
+              const el = e.currentTarget as HTMLAnchorElement;
               el.style.background = "#E6E3E0";
               el.style.transform = "translateY(0)";
             }}
           >
             Book a Call
-          </button>
+          </Link>
         </div>
       </div>
       <div className="nav-bottom-line" />

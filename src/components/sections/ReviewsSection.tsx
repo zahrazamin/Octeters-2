@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { LayoutDashboard } from "lucide-react";
+import Image from "next/image";
 
 const logos = [
   { id: "buyca",     name: "buy.ca" },
@@ -15,7 +16,7 @@ const logos = [
 const slides = [
   {
     index: 0,
-    image: null,
+    image: "/testimonial-1-image.jpg",
     quote: "Octeters understood our business model deeply enough to challenge our assumptions. The AI search feature they proposed wasn't in our brief, and it became the product's biggest selling point.",
     caseStudyUrl: "/case-studies/buyca",
     name: "buy.ca",
@@ -140,9 +141,20 @@ export default function ReviewsSection() {
 
                       {/* Left: full height image */}
                       <div className="reviews__frame">
-                        <div className="reviews__image-placeholder">
-                          <LayoutDashboard size={48} color="rgba(0,0,0,0.15)" />
-                        </div>
+                        {slide.image ? (
+                          <Image
+                            src={slide.image}
+                            alt={slide.name}
+                            width={800}
+                            height={650}
+                            className="reviews__image"
+                            style={{ width: "100%", height: "650px", objectFit: "cover" }}
+                          />
+                        ) : (
+                          <div className="reviews__image-placeholder">
+                            <LayoutDashboard size={48} color="rgba(0,0,0,0.15)" />
+                          </div>
+                        )}
                       </div>
 
                       {/* Right: quote + meta only */}
@@ -173,7 +185,6 @@ export default function ReviewsSection() {
                     <div className="reviews__stats">
                       {slide.stats.map((stat, i) => (
                         <div key={i} className="reviews__stat">
-                          <div className="div-dash-h" />
                           <div className="reviews__stat-title">{stat.title}</div>
                           <div className="reviews__stat-text">{stat.text}</div>
                         </div>

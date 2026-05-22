@@ -733,6 +733,165 @@ body {
 .reviews__slider-line.bottom { bottom: 0; }
 .reviews__slider-line.center { top: 50%; }
 
+/* ══════════════════════════════════════════
+   STREAMLINE SECTION
+══════════════════════════════════════════ */
+
+.streamline-operations-section {
+  background-color: #161616;
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.streamline-container {
+  max-width: 1495px;
+  margin: 0 auto;
+  padding: 0 51px;
+  box-sizing: border-box;
+}
+
+.streamline-operations-section__title {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 63.05px;
+  line-height: 69px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: -2px;
+  margin-bottom: 80px;
+}
+
+/* Cubes wrapper — top cube, vertical line, then the cube field */
+.streamline-operations-section__cubes-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.streamline-operations-section__top-cube {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.streamline-operations-section__center-line {
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  margin: 0 auto;
+}
+
+/* The field containing all 3 absolutely positioned cubes */
+.streamline-operations-section__cubes-field {
+  position: relative;
+  width: 100%;
+  height: 460px;
+}
+
+/* Each cube item */
+.streamline-operations-section__cube-item {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cube--01 {
+  top: 0;
+  left: 55%;
+}
+
+.cube--02 {
+  top: 140px;
+  left: 28%;
+}
+
+.cube--03 {
+  top: 280px;
+  left: 42%;
+}
+
+/* Label beside each cube */
+.streamline-operations-section__cube-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 8px;
+}
+
+.cube-numb {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  display: block;
+}
+
+.cube-text {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  display: block;
+  white-space: nowrap;
+}
+
+/* Bottom two-column text */
+.streamline-operations-section__text-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  padding-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  width: 100%;
+}
+
+.streamline-operations-section__subtitle {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 41.18px;
+  line-height: 46px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.streamline-operations-section__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.streamline-operations-section__text-title {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 25.74px;
+  line-height: 33px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.streamline-operations-section__text-desc {
+  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
+  font-size: 23.16px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #78736e;
+  margin: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

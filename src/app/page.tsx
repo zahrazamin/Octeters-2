@@ -3,6 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import ErpSection from "@/components/sections/ErpSection";
 import ReviewsSection from "@/components/sections/ReviewsSection";
+import StreamlineSection from "@/components/sections/StreamlineSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <ErpSection />
       <ReviewsSection />
+      <StreamlineSection />
     </main>
   );
 }

@@ -24,43 +24,36 @@ body {
   100% { transform: translateX(-50%); }
 }
 
+.liners-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1495px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  border-left: 1px solid rgba(128, 128, 128, 0.15);
+  border-right: 1px solid rgba(128, 128, 128, 0.15);
+}
+
 .nav-bottom-line {
   position: absolute;
   top: 159px;
   left: 0;
   right: 0;
   height: 1px;
-  background: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 5%,
+    rgba(255, 255, 255, 0.08) 95%,
+    transparent 100%
+  );
   pointer-events: none;
   z-index: 2;
 }
 
-.hero-boundary-lines {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1495px;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.hero-boundary-line {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.hero-boundary-line--left {
-  left: 0;
-}
-
-.hero-boundary-line--right {
-  right: 0;
-}
 
 .hero-iso-bg {
   position: absolute;
@@ -200,8 +193,8 @@ body {
   font-size: 63.05px;
   line-height: 69px;
   font-weight: 500;
-  color: #000000;
-  letter-spacing: -1px;
+  color: #1e1e1e;
+  letter-spacing: -2px;
   max-width: 100%;
   margin: 0;
 }
@@ -254,7 +247,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  min-height: 386px;
+  min-height: 340px;
   padding: 51px;
   box-sizing: border-box;
   align-items: start;
@@ -283,7 +276,7 @@ body {
   font-size: 41.18px;
   line-height: 46px;
   font-weight: 500;
-  color: #000000;
+  color: #1e1e1e;
   letter-spacing: 0;
 }
 
@@ -301,7 +294,7 @@ body {
   font-size: 25.74px;
   line-height: 33px;
   font-weight: 500;
-  color: #000000;
+  color: #1e1e1e;
 }
 
 .erp__desc-sub {
@@ -316,7 +309,7 @@ body {
 .erp__cta {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   padding: 80px 51px;
   width: 100%;
@@ -332,8 +325,8 @@ body {
   font-size: 63.05px;
   line-height: 69px;
   font-weight: 500;
-  color: #000000;
-  letter-spacing: -1px;
+  color: #1e1e1e;
+  letter-spacing: -2px;
 }
 
 .erp__cta-sub {
@@ -345,22 +338,6 @@ body {
   margin-top: 16px;
 }
 
-/* Dark button */
-.c-button--dark {
-  background: #000000;
-  color: #ffffff;
-  font-family: var(--font-rethink-sans), "Rethink Sans", sans-serif;
-  font-size: 18.02px;
-  line-height: 20.59px;
-  font-weight: 500;
-  padding: 15px 30px;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: background 0.15s ease, transform 0.15s ease;
-}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

@@ -27,7 +27,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${rethinkSans.variable} h-full antialiased`}>
-      <body style={{ backgroundColor: "#161616" }} className="min-h-full flex flex-col">
+      <body style={{ backgroundColor: "#161616", position: "relative" }} className="min-h-full flex flex-col">
+        <div className="liners-wrapper" aria-hidden="true" />
         {children}
       </body>
     </html>

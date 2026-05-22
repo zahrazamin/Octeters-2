@@ -5,11 +5,7 @@ import ErpSection from "@/components/sections/ErpSection";
 
 export default function Home() {
   return (
-    <main style={{ backgroundColor: "#161616", minHeight: "100vh", position: "relative" }}>
-      <div className="hero-boundary-lines">
-        <div className="hero-boundary-line hero-boundary-line--left" />
-        <div className="hero-boundary-line hero-boundary-line--right" />
-      </div>
+    <main style={{ backgroundColor: "#161616", minHeight: "100vh", position: "relative", zIndex: 1 }}>
       <div className="nav-bottom-line" />
       <AnnouncementBanner />
       <Navbar />

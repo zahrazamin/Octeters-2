@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Button from "@/components/ui/Button";
 const tabs = [
   { id: "mvp",       title: "Deliver",    subtitle: "MVPs fast"       },
   { id: "ai",        title: "Build AI",   subtitle: "platforms"       },
@@ -93,11 +94,11 @@ export default function HeroSection() {
             className="hero__title"
             style={{
               fontFamily: "var(--font-rethink-sans), 'Rethink Sans', sans-serif",
-              fontSize: "63px",
-              lineHeight: "72px",
+              fontSize: "68px",
+              lineHeight: "78px",
               fontWeight: 500,
               color: "#FFFFFF",
-              letterSpacing: "normal",
+              letterSpacing: "-2px",
               margin: 0,
               marginBottom: "40px",
             }}
@@ -124,36 +125,7 @@ export default function HeroSection() {
               platforms — Cloud, DevOps, and QA built in.
             </p>
 
-            <button
-              className="c-button"
-              style={{
-                background: "#E6E3E0",
-                color: "#000000",
-                fontSize: "22px",
-                lineHeight: "26px",
-                fontWeight: 500,
-                padding: "20px 48px",
-                borderRadius: "9999px",
-                border: "none",
-                cursor: "pointer",
-                display: "inline-flex",
-                alignItems: "center",
-                fontFamily: font,
-                transition: "background 0.15s ease, transform 0.15s ease",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLButtonElement;
-                el.style.background = "#D4D0CD";
-                el.style.transform = "translateY(-1px)";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLButtonElement;
-                el.style.background = "#E6E3E0";
-                el.style.transform = "translateY(0)";
-              }}
-            >
-              <span className="c-button__text">Book a Call</span>
-            </button>
+            <Button variant="light">Book a Call</Button>
           </div>
         </div>
 

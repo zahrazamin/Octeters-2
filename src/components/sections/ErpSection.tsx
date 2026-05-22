@@ -1,8 +1,7 @@
 "use client";
 
 import { Box, Zap, Settings } from "lucide-react";
-
-const font = "var(--font-rethink-sans), 'Rethink Sans', sans-serif";
+import Button from "@/components/ui/Button";
 
 const rows = [
   {
@@ -66,21 +65,7 @@ export default function ErpSection() {
               <div className="erp__cta-title">Upgrade your operations.</div>
               <div className="erp__cta-sub">Fast to deploy. Easy to change. Built to scale.</div>
             </div>
-            <button
-              className="c-button--dark"
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLButtonElement;
-                el.style.background = "#1E1E1E";
-                el.style.transform = "translateY(-1px)";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLButtonElement;
-                el.style.background = "#000000";
-                el.style.transform = "translateY(0)";
-              }}
-            >
-              <span style={{ fontFamily: font }}>Book a Call</span>
-            </button>
+            <Button variant="dark">Book a Call</Button>
           </div>
 
         </div>

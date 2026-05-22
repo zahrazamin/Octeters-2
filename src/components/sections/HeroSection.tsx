@@ -87,7 +87,7 @@ export default function HeroSection() {
           style={{
             width: "891px",
             marginTop: "51px",
-            paddingBottom: "180px",
+            paddingBottom: "245px",
           }}
         >
           <h1

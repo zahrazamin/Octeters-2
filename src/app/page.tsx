@@ -2,6 +2,7 @@ import AnnouncementBanner from "@/components/layout/AnnouncementBanner";
 import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import ErpSection from "@/components/sections/ErpSection";
+import ReviewsSection from "@/components/sections/ReviewsSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <ErpSection />
+      <ReviewsSection />
     </main>
   );
 }

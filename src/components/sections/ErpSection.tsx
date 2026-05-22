@@ -7,23 +7,23 @@ const rows = [
   {
     id: "adaptive",
     icon: <Box size={32} strokeWidth={1.5} color="#000000" />,
-    title: <>Adaptive, flexible,<br />and durable</>,
-    main: "Most systems force you to conform. DOSS adapts to you.",
-    sub: "Unify master data, operations, and intelligence into one platform. Easily update workflows, automations, and integrations with clicks – not tickets. Make faster decisions with built-in, real-time analytics, no additional BI tools required.",
+    title: <>Built for scale,<br />not just launch</>,
+    main: "Most agencies disappear after go-live. Octeters stays.",
+    sub: "We architect every product for the next stage, not just the current one. Cloud, DevOps, and QA are built into every engagement — not sold as extras. Your platform grows without rebuilding from scratch.",
   },
   {
     id: "fast",
     icon: <Zap size={32} strokeWidth={1.5} color="#000000" />,
-    title: <>Fast to setup<br />and scale</>,
-    main: "Launch in months. Iterate in minutes.",
-    sub: "Other ERPs take years to setup and months to change. DOSS is built with modular, no-code architecture that lets you deploy 3x faster, make changes on the fly, and speed up every step of your value chain by 10x or more.",
+    title: <>MVP to enterprise,<br />faster than in-house</>,
+    main: "Ship in weeks. Iterate in days.",
+    sub: "Hiring and managing an engineering team takes months before a single line ships. Octeters gives you a senior delivery team on day one — product engineers, DevOps, QA, and AI specialists working in parallel. Most MVPs ship in 12 weeks.",
   },
   {
     id: "value",
     icon: <Settings size={32} strokeWidth={1.5} color="#000000" />,
-    title: <>More value,<br />no ERP tax</>,
-    main: "Unlock real strategy and solutions.",
-    sub: "Our value engineers work with you to deeply understand your business, custom-build your workspace, and provide 24/7 support. We price downstream of value, so every engagement is engineered to maximize your ROI.",
+    title: <>AI built in,<br />not bolted on</>,
+    main: "Every platform we build is AI-ready by default.",
+    sub: "We don't retrofit AI after launch. RAG pipelines, LLM integrations, intelligent search, and agent workflows are designed into the architecture from day one — safe, measurable, and production-grade.",
   },
 ];
 
@@ -36,8 +36,8 @@ export default function ErpSection() {
           {/* Section headline */}
           <div className="erp__heading">
             <h2 className="erp__title">
-              ERP is broken. To fix it, we created<br />
-              something completely new.
+              Most software agencies ship code.<br />
+              We ship platforms that scale.
             </h2>
           </div>
 
@@ -62,11 +62,12 @@ export default function ErpSection() {
           {/* CTA block — sibling of features-wrapper */}
           <div className="erp__cta">
             <div className="erp__cta-text">
-              <div className="erp__cta-title">Upgrade your operations.</div>
-              <div className="erp__cta-sub">Fast to deploy. Easy to change. Built to scale.</div>
+              <div className="erp__cta-title">Ready to build something that lasts?</div>
+              <div className="erp__cta-sub">From first call to first deploy. No guesswork, no surprises.</div>
             </div>
             <Button variant="dark">Book a Call</Button>
           </div>
+          <div className="erp__features-line-bottom" aria-hidden="true" />
 
         </div>
       </div>
